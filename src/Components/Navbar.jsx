@@ -19,7 +19,7 @@ function Navbar() {
             <Link to={user?'/home':'/'}><span className=' text-[18px] sm:text-[20px] font-[700]'>Pixie</span></Link>
         </div>
         {user?<div>
-            <ul className='flex flex-row items-center gap-6 font-[600] text-[12px] sm:text-[16px]'>
+            <ul className='flex flex-row items-center gap-6 font-[600] text-[10px] sm:text-[16px]'>
                 <span className='text-blue-800 text-[12px]'>{user.displayName}</span>
                 <Link to={'/home'}><li>Home</li></Link>
                 <Link to={'/addPost'}><li>AddPost</li></Link>

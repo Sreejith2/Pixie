@@ -6,6 +6,7 @@ import { useContext, useEffect } from "react"
 import { AuthContext, FireBaseContext } from "./Context/Context"
 import AddPost from "./Pages/AddPost"
 import MyPosts from "./Pages/MyPosts"
+import ViewPost from "./Pages/ViewPost"
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path:'/myPosts',
     element:<MyPosts/>
+  },
+  {
+    path:'/viewPost/:id',
+    element:<ViewPost/>
   }
 ])
 

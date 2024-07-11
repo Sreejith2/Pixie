@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { FireBaseContext } from '../Context/Context';
+import { Link } from "react-router-dom";
 
 function Post(props) {
     const [liked, setLiked] = useState(false);
@@ -20,10 +21,12 @@ function Post(props) {
     };
 
     return (
-        <div className='flex flex-col gap-1 w-52 min-h-64 p-3 shadow-lg border-[1px] border-black'>
-            <h1 className="text-blue-800">{props.userName}</h1>
-            <img className='h-48' src={props.img} alt='' />
-            <p>{props.desc}</p>
+        <div className={props.purpose==='view'?'flex flex-col gap-1 min-w-52 min-h-64 p-3 shadow-lg border-[1px] border-black':'flex flex-col gap-1 w-52 min-h-64 p-3 shadow-lg border-[1px] border-black'}>
+            <Link to={`/viewPost/${props.id}`} >
+                <h1 className="text-blue-800">{props.userName}</h1>
+                <img className={props.purpose==='view'?' h-52 sm:h-80 w-52 sm:w-80 ':'h-48'} src={props.img} alt='' />
+                <p>{props.desc}</p>
+            </Link>
             <div className="flex gap-1">
                 <span onClick={handleLike} className="cursor-pointer">
                     <ThumbUpIcon />

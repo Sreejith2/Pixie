@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Post from '../Components/Post'
 import { FireBaseContext } from '../Context/Context'
+import Loader from '../Components/Loader'
 
 function Home() {
   const {firebase} = useContext(FireBaseContext)
@@ -20,10 +21,14 @@ function Home() {
   
   return (
     <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
-        <Navbar />    
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
-          {posts.map((item,index)=><Post key={index} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
-        </div>
+        <Navbar />
+        {posts.length==0?
+          <Loader msg='Loading...'/>
+          :    
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
+            {posts.map((item,index)=><Post key={index} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
+          </div>
+        }
         <Footer />
     </div>
   )

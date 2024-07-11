@@ -12,6 +12,8 @@ const FireBaseContextProvider = (props)=>{
     )
 }
 
+
+
 const AuthContextProvider = (props)=>{
     const [user,setUser] = useState(null)
     return(
