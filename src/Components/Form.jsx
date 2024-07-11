@@ -33,8 +33,8 @@ function Form(props) {
     <form onSubmit={handleSubmit} className='flex flex-col shadow-lg p-3 gap-3 bg-slate-400 h-80 w-64 sm:w-80 items-center justify-center rounded-lg '>
         <h1 className='font-[700] text-[18px] sm:text-[25px]'>{props.type==='login'?'LOGIN':'SIGNUP'}</h1>
         <input required type='email' onChange={(e)=>setEmail(e.target.value)} value={email} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter email..' />
-        {props.type!=='login'?<input required onChange={(e)=>setUsername(e.target.value)} value={username} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter username' />:null}
-        <input required type='password onChange={(e)=>setPassword(e.target.value)} value={password} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter password' />
+        {props.type!=='login'?<input type='text' required onChange={(e)=>setUsername(e.target.value)} value={username} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter username' />:null}
+        <input required type='password' onChange={(e)=>setPassword(e.target.value)} value={password} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter password' />
         <button className='p-2 bg-slate-200 text-[14px] sm:text-[15px] font-[600] w-40 rounded-lg' type='submit'>{props.type==='login'?'Signin':'Signup'}</button>
         {props.type==='login'?<p>New user <Link to={'/signup'} ><span className='font-[500] text-[14px] sm:text-[15px] text-blue-800'>Signup</span></Link> here</p>:<p>Already a user <Link to={'/'} ><span className='font-[500] text-blue-800'>Signin</span></Link> here</p>}
     </form>
