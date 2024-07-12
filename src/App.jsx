@@ -7,6 +7,7 @@ import { AuthContext, FireBaseContext } from "./Context/Context"
 import AddPost from "./Pages/AddPost"
 import MyPosts from "./Pages/MyPosts"
 import ViewPost from "./Pages/ViewPost"
+import UserPosts from "./Pages/UserPosts"
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path:'/viewPost/:id',
     element:<ViewPost/>
+  },
+  {
+    path:'/userPosts/:id',
+    element:<UserPosts/>
   }
 ])
 

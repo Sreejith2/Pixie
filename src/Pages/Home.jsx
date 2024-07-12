@@ -26,7 +26,7 @@ function Home() {
           <Loader msg='Loading...'/>
           :    
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
-            {posts.map((item,index)=><Post key={index} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
+            {posts.map((item,index)=><Post key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
           </div>
         }
         <Footer />

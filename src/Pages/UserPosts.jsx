@@ -1,29 +1,30 @@
-import {useContext,useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Post from '../Components/Post'
-import { AuthContext, FireBaseContext } from '../Context/Context'
+import Loader from '../Components/Loader'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import Loader from '../Components/Loader'
+import { FireBaseContext } from '../Context/Context'
 
-function MyPosts() {
+function UserPosts() {
+    const {id} = useParams()
     const [posts,setPosts] = useState(null)
     const {firebase} = useContext(FireBaseContext)
-    const {user} = useContext(AuthContext)
     useEffect(()=>{
-        firebase.firestore().collection('posts').where('userId','==',user.uid).get().then((snapshot)=>{
-            const allPosts = snapshot.docs.map((post)=>{
-                return {
+        firebase.firestore().collection('posts').where('userId','==',id).get().then((snapshot)=>{
+            const allPosts=snapshot.docs.map((post)=>{
+                return{
                     ...post.data(),
                     id:post.id
                 }
             })
-            console.log(allPosts)
             setPosts(allPosts)
         })
-    },[user.uid])
-    return (
+    },[id])
+  return (
         <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
             <Navbar />
+            {posts?<h1 className='text-[16px] sm:text-[25px] mt-[1px] text-blue-700'>{posts[0].userName}</h1>:null}
             {!posts?
                 <Loader msg='Loading...'/>
                 :    
@@ -33,7 +34,7 @@ function MyPosts() {
             }
             <Footer />
         </div>
-    )
+  )
 }
 
-export default MyPosts
+export default UserPosts

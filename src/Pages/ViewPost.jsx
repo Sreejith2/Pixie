@@ -36,7 +36,7 @@ function ViewPost() {
       {!post?
           <Loader msg='Loading...'/>
           :
-          <Post purpose='view' id={id} usersLiked={post.usersLiked} noOfLikes={post.noOfLikes} userName={post.userName} img={post.imgUrl} desc={post.desc}/>
+          <Post purpose='view' id={id} userId={post.userId} usersLiked={post.usersLiked} noOfLikes={post.noOfLikes} userName={post.userName} img={post.imgUrl} desc={post.desc}/>
         }
       <Footer />
     </div>

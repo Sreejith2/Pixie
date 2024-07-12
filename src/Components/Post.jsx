@@ -39,8 +39,10 @@ function Post(props) {
 
   return (
     <div className={props.purpose === 'view' ? 'flex flex-col gap-1 min-w-52 min-h-64 p-3 shadow-lg border-[1px] border-black' : 'flex flex-col gap-1 w-52 min-h-64 p-3 shadow-lg border-[1px] border-black'}>
-      <Link to={`/viewPost/${props.id}`} >
+      <Link to={`/userPosts/${props.userId}`}>
         <h1 className="text-blue-800">{props.userName}</h1>
+      </Link>
+      <Link to={`/viewPost/${props.id}`} >
         <img className={props.purpose === 'view' ? 'h-52 sm:h-80 w-52 sm:w-80' : 'h-48'} src={props.img} alt='' />
         <p>{props.desc}</p>
       </Link>
