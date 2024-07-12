@@ -20,7 +20,7 @@ function MyPosts() {
             console.log(allPosts)
             setPosts(allPosts)
         })
-    },[user.uid])
+    },[user.uid,posts])
     return (
         <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
             <Navbar />
@@ -28,7 +28,7 @@ function MyPosts() {
                 <Loader msg='Loading...'/>
                 :    
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
-                    {posts.map((item,index)=><Post key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
+                    {posts.map((item,index)=><Post own="yes" key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
                 </div>
             }
             <Footer />
