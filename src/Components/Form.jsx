@@ -43,13 +43,8 @@ function Form(props) {
         <input type='email' required onChange={(e)=>setEmail(e.target.value)} value={email} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter email..' />
         {props.type!=='login'?<input type='text' required onChange={(e)=>setUsername(e.target.value)} value={username} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter username' />:null}
         <input type='password' required onChange={(e)=>setPassword(e.target.value)} value={password} className=' border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter password' />
-<<<<<<< HEAD
         {wrong?<p className='text-[10px] sm:text-[14px] text-blue-800'>Wrong credentials</p>:null}
         {exist?<p className='text-[10px] sm:text-[14px] text-blue-800'>User Already Exist</p>:null}
-=======
-        {wrong?<p className='text-[10px] sm:text-[14px] text-blue-700'>Wrong credentials</p>:null}
-        {exist?<p className='text-[10px] sm:text-[14px] text-blue-700'>User Already Exist</p>:null}
->>>>>>> ae475b73a11cd6504d48e65e58df7ec316c498ae
         <button className='p-2 bg-slate-200 text-[14px] sm:text-[15px] font-[600] w-40 rounded-lg' type='submit'>{props.type==='login'?'Signin':'Signup'}</button>
         {props.type==='login'?<p>New user <Link to={'/signup'} ><span className='font-[500] text-[14px] sm:text-[15px] text-blue-800'>Signup</span></Link> here</p>:<p>Already a user <Link to={'/'} ><span className='font-[500] text-blue-800'>Signin</span></Link> here</p>}
     </form>
