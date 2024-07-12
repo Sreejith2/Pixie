@@ -14,7 +14,3 @@ const firebaseConfig = {
 };
 
 export default firebase.initializeApp(firebaseConfig);
-<<<<<<< HEAD
-=======
-
->>>>>>> ae475b73a11cd6504d48e65e58df7ec316c498ae
