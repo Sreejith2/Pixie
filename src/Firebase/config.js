@@ -13,8 +13,5 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-<<<<<<< HEAD
 export default firebase.initializeApp(firebaseConfig);
-=======
-  export default firebase.initializeApp(firebaseConfig);
->>>>>>> 0f155a0aeb0c05f776ffcfd3d3b572ee89ec6812
+
