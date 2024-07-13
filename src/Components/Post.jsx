@@ -58,7 +58,7 @@ function Post(props) {
           </Link>
           <Link to={`/viewPost/${props.id}`} >
             <img className={props.purpose === 'view' ? 'h-52 sm:h-80 w-52 sm:w-80' : 'h-48'} src={props.img} alt='' />
-            <p>{props.desc}</p>
+            <p>{props.purpose==='view'?props.desc:props.desc.slice(0,20)+'...'}</p>
           </Link>
           <div className="flex items-center justify-between">
             <div className="flex gap-1">

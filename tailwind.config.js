@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        'navColor':'#939185'
+        'navColor':'#4E9DC2'
       }
     },
   },
