@@ -41,8 +41,7 @@ function Post(props) {
 
   const handleDelete = async (postId,imgURL)=>{
       setDeleting(true)
-      const imgRef = firebase.storage().refFromURL(imgURL)
-      await imgRef.delete()
+      await firebase.storage().refFromURL(imgURL).delete().then(()=>{console.log("Image deleted")}).catch((err)=>console.log(err))
       await firebase.firestore().collection('posts').doc(postId).delete().then(()=>{
           setDeleting(false)
           console.log("Deleted")
