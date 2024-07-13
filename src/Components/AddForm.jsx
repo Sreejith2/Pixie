@@ -35,7 +35,7 @@ function AddForm() {
             <Loader msg='Posting...'/>
             :
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 my-4">
-                <form onSubmit={handleUpload} className='flex flex-col shadow-lg p-3 gap-6 bg-slate-400 min-h-80 w-64 sm:w-96 items-center justify-center rounded-lg'>
+                <form onSubmit={handleUpload} className='flex flex-col shadow-lg p-3 gap-6 bg-navColor min-h-80 w-64 sm:w-96 items-center justify-center rounded-lg'>
                     <h1 className='font-[700] text-[18px] sm:text-[25px]'>Add Post</h1>
                     <input onChange={(e)=>setDesc(e.target.value)} value={desc} className='border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' required type='text' placeholder='Enter description of post..'/>
                     <input onChange={(e)=>setImg(e.target.files[0])} className='text-[12px] sm:text-[14px]' required type='file' />
