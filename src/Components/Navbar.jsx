@@ -14,8 +14,8 @@ function Navbar() {
   }
   return (
     <nav className=' w-screen flex items-center justify-between px-3 bg-slate-400 h-10'>
-        <div className='flex items-center'>
-            <img className=' h-8' src={logo} alt=''/>
+        <div className='flex gap-[2px] items-center'>
+            <img className=' h-6' src={logo} alt=''/>
             <Link to={user?'/home':'/'}><span className=' text-[18px] sm:text-[20px] font-[700]'>Pixie</span></Link>
         </div>
         {user?<div>
