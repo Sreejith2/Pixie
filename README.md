@@ -1,4 +1,5 @@
-# Pixie 
+# Pixie  
+https://pixie123.netlify.app/
 
 Pixie is a web application that allows users to sign up, sign in, upload images, and like images. This project is built using React, Firebase, and React Router for seamless navigation and state management.
 
@@ -36,4 +37,3 @@ Pixie is a web application that allows users to sign up, sign in, upload images,
     ```
 2. Open your browser and navigate to `http://localhost:5173`.
 
-[Check Live Website Here]:https://pixie123.netlify.app/
