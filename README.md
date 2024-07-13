@@ -36,4 +36,4 @@ Pixie is a web application that allows users to sign up, sign in, upload images,
     ```
 2. Open your browser and navigate to `http://localhost:5173`.
 
-
+[Check Live Website Here][https://pixie123.netlify.app/]
