@@ -10,17 +10,19 @@ function MyPosts() {
     const {firebase} = useContext(FireBaseContext)
     const {user} = useContext(AuthContext)
     useEffect(()=>{
-        firebase.firestore().collection('posts').where('userId','==',user.uid).get().then((snapshot)=>{
-            const allPosts = snapshot.docs.map((post)=>{
-                return {
-                    ...post.data(),
-                    id:post.id
-                }
+        if(user){
+            firebase.firestore().collection('posts').where('userId','==',user.uid).get().then((snapshot)=>{
+                const allPosts = snapshot.docs.map((post)=>{
+                    return {
+                        ...post.data(),
+                        id:post.id
+                    }
+                })
+                console.log(allPosts)
+                setPosts(allPosts)
             })
-            console.log(allPosts)
-            setPosts(allPosts)
-        })
-    },[user.uid,posts])
+        }
+    },[user,posts])
     return (
         <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
             <Navbar />
