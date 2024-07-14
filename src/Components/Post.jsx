@@ -57,7 +57,9 @@ function Post(props) {
             <h1 className="text-blue-800">{props.userName}</h1>
           </Link>
           <Link to={`/viewPost/${props.id}`} >
-            <img className={props.purpose === 'view' ? 'h-52 sm:h-80 w-52 sm:w-80' : 'h-48'} src={props.img} alt='' />
+            <div className="w-full h-52 sm:h-72 overflow-hidden">
+              <img className="w-full h-full object-cover" src={props.img} alt='' />
+            </div>
             <p>{props.purpose==='view'?props.desc:props.desc.slice(0,20)+'...'}</p>
           </Link>
           <div className="flex items-center justify-between">
