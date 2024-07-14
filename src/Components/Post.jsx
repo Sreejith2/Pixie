@@ -50,14 +50,14 @@ function Post(props) {
   }
 
   return (
-    <div>
+    <div className={props.purpose==='view'?'my-5':''}>
       {deleting?<Loader msg="Deleting"/>:
-        <div className={props.purpose === 'view' ? 'flex flex-col gap-1 min-w-52 min-h-64 p-3 shadow-lg border-[1px] border-black' : 'flex flex-col gap-1 w-52 min-h-64 p-3 shadow-lg border-[1px] border-black'}>
+        <div className={props.purpose === 'view' ? 'flex flex-col gap-1 min-w-52 min-h-64 p-3 shadow-lg border-[1px] border-black' : 'flex flex-col gap-1 w-60 min-h-64 p-3 shadow-lg border-[1px] border-black'}>
           <Link to={`/userPosts/${props.userId}`}>
             <h1 className="text-blue-800">{props.userName}</h1>
           </Link>
           <Link to={`/viewPost/${props.id}`} >
-            <div className="w-full h-52 sm:h-72 overflow-hidden">
+            <div className={props.purpose==='view'?"w-full h-60 sm:h-96 ":"w-full h-52 sm:h-72 overflow-hidden"}>
               <img className="w-full h-full object-cover" src={props.img} alt='' />
             </div>
             <p>{props.purpose==='view'?props.desc:props.desc.slice(0,20)+'...'}</p>
