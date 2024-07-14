@@ -35,13 +35,13 @@ function AddForm() {
             <Loader msg='Posting...'/>
             :
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 my-4">
-                <form onSubmit={handleUpload} className='flex flex-col shadow-lg p-3 gap-6 bg-navColor min-h-80 w-64 sm:w-96 items-center justify-center rounded-lg'>
+                <form onSubmit={handleUpload} className='flex flex-col shadow-lg p-3 gap-6 bg-formColor min-h-80 w-64 sm:w-96 items-center justify-center border border-black rounded-sm'>
                     <h1 className='font-[700] text-[18px] sm:text-[25px]'>Add Post</h1>
-                    <input onChange={(e)=>setDesc(e.target.value)} value={desc} className='border-none text-[14px] sm:text-[15px] outline-none p-2 rounded-lg w-52 sm:w-60' required type='text' placeholder='Enter description of post..'/>
+                    <input onChange={(e)=>setDesc(e.target.value)} value={desc} className='border border-black text-[14px] sm:text-[15px] outline-none p-2 rounded-sm w-52 sm:w-60' required type='text' placeholder='Enter description of post..'/>
                     <input onChange={(e)=>setImg(e.target.files[0])} className='text-[12px] sm:text-[14px]' required type='file' />
-                    <button className='p-2 bg-slate-200 text-[14px] sm:text-[15px] font-[600] w-40 rounded-lg' type='submit'>Post</button>
+                    <button className='p-2 bg-black text-white border border-black text-[14px] sm:text-[15px] font-[600] w-40 rounded-sm' type='submit'>Post</button>
                 </form>
-                {img?<div className="flex flex-col gap-1 items-center justify-center bg-slate-400 p-3 rounded-lg">
+                {img?<div className="flex flex-col gap-1 items-center justify-center bg-formColor p-3 border border-black rounded-sm">
                     {img?<img src={URL.createObjectURL(img)} alt="" className=" w-48 h-48" />:null}
                     {desc?<p>{desc}</p>:null}
                 </div>:null}

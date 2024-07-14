@@ -38,14 +38,14 @@ function Form(props) {
     }
   }
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col shadow-lg p-3 gap-3 bg-navColor h-80 w-64 sm:w-80 items-center justify-center rounded-lg '>
+    <form onSubmit={handleSubmit} className='flex flex-col shadow-lg p-3 gap-3 border bg-formColor border-black h-80 w-64 sm:w-80 items-center justify-center rounded-sm'>
         <h1 className='font-[700] text-[18px] sm:text-[25px]'>{props.type==='login'?'LOGIN':'SIGNUP'}</h1>
-        <input type='email' required onChange={(e)=>setEmail(e.target.value)} value={email} className=' border-none text-[14px] sm:text-[14px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter email..' />
-        {props.type!=='login'?<input type='text' required onChange={(e)=>setUsername(e.target.value)} value={username} className=' border-none text-[14px] sm:text-[14px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter username' />:null}
-        <input type='password' required onChange={(e)=>setPassword(e.target.value)} value={password} className=' border-none text-[14px] sm:text-[14px] outline-none p-2 rounded-lg w-52 sm:w-60' placeholder='Enter password' />
+        <input type='email' required onChange={(e)=>setEmail(e.target.value)} value={email} className=' border border-black text-[14px] sm:text-[14px] outline-none p-2 rounded-sm w-52 sm:w-60' placeholder='Enter email..' />
+        {props.type!=='login'?<input type='text' required onChange={(e)=>setUsername(e.target.value)} value={username} className=' border border-black text-[14px] sm:text-[14px] outline-none p-2 rounded-sm w-52 sm:w-60' placeholder='Enter username' />:null}
+        <input type='password' required onChange={(e)=>setPassword(e.target.value)} value={password} className=' border border-black text-[14px] sm:text-[14px] outline-none p-2 rounded-sm w-52 sm:w-60' placeholder='Enter password' />
         {wrong?<p className='text-[10px] sm:text-[14px] text-blue-800'>Wrong credentials</p>:null}
         {exist?<p className='text-[10px] sm:text-[14px] text-blue-800'>User Already Exist</p>:null}
-        <button className='p-2 bg-slate-200 text-[14px] sm:text-[15px] font-[600] w-40 rounded-lg' type='submit'>{props.type==='login'?'Signin':'Signup'}</button>
+        <button className='p-2 bg-black text-white text-[14px] sm:text-[15px] font-[600] w-40' type='submit'>{props.type==='login'?'Signin':'Signup'}</button>
         {props.type==='login'?<p>New user <Link to={'/signup'} ><span className='font-[500] text-[14px] sm:text-[15px] text-blue-800'>Signup</span></Link> here</p>:<p>Already a user <Link to={'/'} ><span className='font-[500] text-blue-800'>Signin</span></Link> here</p>}
     </form>
   )

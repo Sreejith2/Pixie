@@ -24,7 +24,7 @@ function UserPosts() {
   return (
         <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
             <Navbar />
-            {posts?<h1 className='text-[16px] sm:text-[25px] mt-[1px] text-blue-700'>{posts[0].userName}</h1>:null}
+            {posts?<h1 className='text-[16px] sm:text-[25px] mt-[2px] text-blue-700'>{posts[0].userName}</h1>:null}
             {!posts?
                 <Loader msg='Loading...'/>
                 :    

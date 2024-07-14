@@ -13,14 +13,14 @@ function Navbar() {
     navigate('/')
   }
   return (
-    <nav className=' w-screen flex items-center justify-between px-3 bg-navColor h-10'>
+    <nav className=' w-screen flex items-center justify-between px-3 bg-navColor shadow-lg border border-slate-500 h-10'>
         <div className='flex gap-[2px] items-center'>
             <img className=' h-6' src={logo} alt=''/>
             <Link to={user?'/home':'/'}><span className=' text-[18px] sm:text-[20px] font-[700]'>Pixie</span></Link>
         </div>
         {user?<div>
             <ul className='flex flex-row items-center gap-6 font-[600] text-[10px] sm:text-[16px]'>
-                <span className='text-blue-800 text-[12px]'>{user.displayName}</span>
+                <span className='text-red-800 text-[12px] sm:text-[14px]'>{user.displayName}</span>
                 <Link to={'/home'}><li>Home</li></Link>
                 <Link to={'/addPost'}><li>AddPost</li></Link>
                 <Link to={'/myPosts'}><li>MyPosts</li></Link>

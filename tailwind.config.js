@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        'navColor':'#4E9DC2'
+        'navColor':'#EADBC8',
+        'formColor':'#C7B7A3'
       }
     },
   },
