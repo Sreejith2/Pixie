@@ -7,7 +7,7 @@ import Loader from '../Components/Loader'
 
 function Home() {
   const {firebase} = useContext(FireBaseContext)
-  const [posts,setPosts] = useState([])
+  const [posts,setPosts] = useState(null)
   
   useEffect(()=>{
     firebase.firestore().collection('posts').get().then((snapshot)=>{
@@ -22,7 +22,7 @@ function Home() {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
         <Navbar />
-        {posts.length==0?
+        {!posts?
           <Loader msg='Loading...'/>
           :    
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>

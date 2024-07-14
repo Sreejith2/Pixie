@@ -7,6 +7,7 @@ import Loader from '../Components/Loader'
 
 function MyPosts() {
     const [posts,setPosts] = useState(null)
+    const [deleted,setDeleted] = useState(false)
     const {firebase} = useContext(FireBaseContext)
     const {user} = useContext(AuthContext)
     useEffect(()=>{
@@ -19,10 +20,15 @@ function MyPosts() {
                     }
                 })
                 console.log(allPosts)
+                setDeleted(false)
                 setPosts(allPosts)
             })
         }
-    },[user,posts])
+    },[user,deleted])
+
+    const refresh = ()=>{
+        setDeleted(true)
+    }
     return (
         <div className="flex flex-col items-center justify-between min-h-screen overflow-x-hidden">
             <Navbar />
@@ -30,7 +36,7 @@ function MyPosts() {
                 <Loader msg='Loading...'/>
                 :    
                 <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
-                    {posts.map((item,index)=><Post own="yes" key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
+                    {posts.map((item,index)=><Post refresh={refresh} own="yes" key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
                 </div>
             }
             <Footer />

@@ -44,6 +44,7 @@ function Post(props) {
       await firebase.storage().refFromURL(imgURL).delete().then(()=>{console.log("Image deleted")}).catch((err)=>console.log(err))
       await firebase.firestore().collection('posts').doc(postId).delete().then(()=>{
           setDeleting(false)
+          props.refresh()
           console.log("Deleted")
         }
       ).catch((err)=>console.log(err))
