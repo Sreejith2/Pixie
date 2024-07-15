@@ -13,7 +13,7 @@ function Navbar() {
     navigate('/')
   }
   return (
-    <nav className=' w-screen flex items-center justify-between px-3 bg-navColor shadow-lg border border-slate-500 h-10'>
+    <nav className=' w-screen flex items-center justify-between px-3 bg-navColor shadow-lg border border-slate-500 h-12'>
         <div className='flex gap-[2px] items-center'>
             <img className=' h-6' src={logo} alt=''/>
             <Link to={user?'/home':'/'}><span className=' text-[18px] sm:text-[20px] font-[700]'>Pixie</span></Link>

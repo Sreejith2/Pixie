@@ -4,6 +4,7 @@ import Footer from '../Components/Footer'
 import Post from '../Components/Post'
 import { FireBaseContext } from '../Context/Context'
 import Loader from '../Components/Loader'
+import Contact from '../Components/Contact'
 
 function Home() {
   const {firebase} = useContext(FireBaseContext)
@@ -25,10 +26,11 @@ function Home() {
         {!posts?
           <Loader msg='Loading...'/>
           :    
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 grid-flow-row'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 my-10 sm:my-20 grid-flow-row'>
             {posts.map((item,index)=><Post key={index} userId={item.userId} usersLiked={item.usersLiked} id={item.id} noOfLikes={item.noOfLikes} userName={item.userName} img={item.imgUrl} desc={item.desc} />)}
           </div>
         }
+        {posts?<Contact/>:null}
         <Footer />
     </div>
   )
