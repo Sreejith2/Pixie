@@ -61,7 +61,7 @@ function Post(props) {
             <div className={props.purpose==='view'?"w-full h-60 sm:h-96 ":"w-full h-52 sm:h-72 overflow-hidden"}>
               <img className="w-full h-full object-cover" src={props.img} alt='' />
             </div>
-            <p>{props.purpose==='view'?props.desc:props.desc.slice(0,20)+'...'}</p>
+            <p>{props.purpose==='view'?props.desc:props.desc.length>20?props.desc.slice(0,20)+'...':props.desc}</p>
           </Link>
           <div className="flex items-center justify-between">
             <div className="flex gap-1">
