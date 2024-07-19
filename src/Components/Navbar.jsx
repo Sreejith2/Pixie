@@ -26,7 +26,7 @@ function Navbar() {
                 <Link to={'/myPosts'}><li>MyPosts</li></Link>
                 <li onClick={handleLogout} className=' cursor-pointer'>Logout</li>
             </ul>
-        </div>:null}
+        </div>:<div className='flex mr-5 text-[16px] font-[600]'><Link to={'/login'}>Login</Link></div>}
     </nav>
   )
 }
