@@ -8,11 +8,14 @@ import AddPost from "./Pages/AddPost"
 import MyPosts from "./Pages/MyPosts"
 import ViewPost from "./Pages/ViewPost"
 import UserPosts from "./Pages/UserPosts"
+import ProductPage from "./Pages/ProductPage"
+import About from "./Pages/About"
+import ContactPage from "./Pages/ContactPage"
 
 
 const router = createBrowserRouter([
   {
-    path:'/',
+    path:'/login',
     element:<LogIn/>
   },
   {
@@ -38,6 +41,18 @@ const router = createBrowserRouter([
   {
     path:'/userPosts/:id',
     element:<UserPosts/>
+  },
+  {
+    path:'/',
+    element:<ProductPage/>
+  },
+  {
+    path:'/about',
+    element:<About/>
+  },
+  {
+    path:'/contact',
+    element:<ContactPage/>
   }
 ])
 

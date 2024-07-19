@@ -30,7 +30,7 @@ function Contact() {
       
   }
   return (
-    <form onSubmit={sendMail} className='flex flex-col bg-gradient-to-br from-slate-300 to-slate-200 shadow-lg p-2 gap-3 border border-black h-80 sm:h-96 w-[60%] mb-20 items-center justify-center rounded-sm'>
+    <form onSubmit={sendMail} className='flex flex-col bg-gradient-to-br from-slate-300 to-slate-200 shadow-lg p-2 gap-3 border border-black h-80 sm:h-96 w-[60%] my-20 items-center justify-center rounded-sm'>
        <h1 className=' text-blue-800 text-[20px]'>Contact Me</h1>
        <input required onChange={(e)=>setName(e.target.value)} value={name} className=' text-[14px] sm:text-[16px] border outline-none w-[90%] border-black p-1' type='text' placeholder='Enter your name' />
        <input required onChange={(e)=>setFrom(e.target.value)} value={from} className=' text-[14px] sm:text-[16px] border outline-none w-[90%] border-black p-1' type='email' placeholder='Enter your email' />
