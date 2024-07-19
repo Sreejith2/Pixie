@@ -2,8 +2,8 @@ import React from 'react'
 
 function AboutComponent() {
   return (
-    <div className='flex flex-1 flex-col justify-center items-center w-screen'>
-        <div className='flex flex-col items-center h-[300px] w-[60%] border border-black p-5 gap-5'>
+    <div className='flex flex-col justify-center items-center w-screen'>
+        <div className='flex flex-col items-center h-[300px] w-[80%] sm:w-[60%] border border-black p-5 gap-5'>
             <span className=' underline text-[20px] sm:text-[25px]'>About</span>
             <p className=' text-[15px] overflow-y-scroll sm:text-[20px]'>
                 Welcome to <span className='text-blue-600'>Pixie</span>, your new favorite platform to share moments and connect with friends!
