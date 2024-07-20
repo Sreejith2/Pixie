@@ -46,7 +46,7 @@ function Form(props) {
         {wrong?<p className='text-[10px] sm:text-[14px] text-blue-800'>Wrong credentials</p>:null}
         {exist?<p className='text-[10px] sm:text-[14px] text-blue-800'>User Already Exist</p>:null}
         <button className='p-2 bg-black text-white text-[14px] sm:text-[15px] font-[600] w-40' type='submit'>{props.type==='login'?'Signin':'Signup'}</button>
-        {props.type==='login'?<p>New user <Link to={'/signup'} ><span className='font-[500] text-[14px] sm:text-[15px] text-blue-800'>Signup</span></Link> here</p>:<p>Already a user <Link to={'/'} ><span className='font-[500] text-blue-800'>Signin</span></Link> here</p>}
+        {props.type==='login'?<p>New user <Link to={'/signup'} ><span className='font-[500] text-[14px] sm:text-[15px] text-blue-800'>Signup</span></Link> here</p>:<p>Already a user <Link to={'/login'} ><span className='font-[500] text-blue-800'>Signin</span></Link> here</p>}
     </form>
   )
 }
